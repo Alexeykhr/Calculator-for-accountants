@@ -1,0 +1,12 @@
+c:\users\alexey\documents\visual studio 2015\Projects\Calculator for accountants\Calculator for accountants\bin\Debug\Calculator for accountants.exe.config
+c:\users\alexey\documents\visual studio 2015\Projects\Calculator for accountants\Calculator for accountants\bin\Debug\Calculator for accountants.exe
+c:\users\alexey\documents\visual studio 2015\Projects\Calculator for accountants\Calculator for accountants\bin\Debug\Calculator for accountants.pdb
+c:\users\alexey\documents\visual studio 2015\Projects\Calculator for accountants\Calculator for accountants\obj\Debug\Calculator_for_accountants.Form1.resources
+c:\users\alexey\documents\visual studio 2015\Projects\Calculator for accountants\Calculator for accountants\obj\Debug\Calculator_for_accountants.Properties.Resources.resources
+c:\users\alexey\documents\visual studio 2015\Projects\Calculator for accountants\Calculator for accountants\obj\Debug\Calculator for accountants.csproj.GenerateResource.Cache
+c:\users\alexey\documents\visual studio 2015\Projects\Calculator for accountants\Calculator for accountants\obj\Debug\Calculator for accountants.exe
+c:\users\alexey\documents\visual studio 2015\Projects\Calculator for accountants\Calculator for accountants\obj\Debug\Calculator for accountants.pdb
+c:\users\alexey\documents\visual studio 2015\Projects\Calculator for accountants\Calculator for accountants\obj\Debug\Calculator for accountants.csprojResolveAssemblyReference.cache
+c:\users\alexey\documents\visual studio 2015\Projects\Calculator for accountants\Calculator for accountants\bin\Debug\System.Net.Http.dll
+c:\users\alexey\documents\visual studio 2015\Projects\Calculator for accountants\Calculator for accountants\bin\Debug\System.Net.Http.xml
+c:\users\alexey\documents\visual studio 2015\Projects\Calculator for accountants\Calculator for accountants\bin\Debug\ru\System.Net.Http.resources.dll
