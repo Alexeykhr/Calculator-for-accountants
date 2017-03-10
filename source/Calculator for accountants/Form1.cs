@@ -20,6 +20,11 @@ namespace Calculator_for_accountants
         private void Form1_Load(object sender, EventArgs e)
         {
             TopMost = true;
+            textBox1.KeyUp += new KeyEventHandler(changeText);
+            textBox2.KeyUp += new KeyEventHandler(changeText);
+            textBox3.KeyUp += new KeyEventHandler(changeText);
+            textBox4.KeyUp += new KeyEventHandler(changeText);
+            textBox5.KeyUp += new KeyEventHandler(changeText);
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -27,72 +32,50 @@ namespace Calculator_for_accountants
             TopMost = (checkBox1.Checked) ? true : false;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-            textBox1.KeyUp += TextBox1_KeyUp;
-        }
-
-        private void TextBox1_KeyUp(object sender, KeyEventArgs e)
-        {
-            changeText(sender, e);
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            textBox2.KeyUp += TextBox2_KeyUp;
-        }
-
-        private void TextBox2_KeyUp(object sender, KeyEventArgs e)
-        {
-            changeText(sender, e);
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-            textBox3.KeyUp += TextBox3_KeyUp;
-        }
-
-        private void TextBox3_KeyUp(object sender, KeyEventArgs e)
-        {
-            changeText(sender, e);
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-            textBox4.KeyUp += TextBox4_KeyUp;
-        }
-
-        private void TextBox4_KeyUp(object sender, KeyEventArgs e)
-        {
-            changeText(sender, e);
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-            textBox5.KeyUp += TextBox5_KeyUp;
-        }
-
-        private void TextBox5_KeyUp(object sender, KeyEventArgs e)
-        {
-            changeText(sender, e);
-        }
-
-        private void changeText(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Tab)
-            {
-                return;
-            }
-
             double val;
-            string str = ((TextBox)sender).Name;
-            bool isNumeric = double.TryParse( ((TextBox)sender).Text, out val );
+            bool isNumeric = double.TryParse(textBox2.Text.Replace('.', ','), out val);
 
             if (isNumeric)
             {
-                calculations(str, val);
+                calculations("textBox2", val);
             }
-            else
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e) { }
+
+        private void textBox2_TextChanged(object sender, EventArgs e) { }
+
+        private void textBox3_TextChanged(object sender, EventArgs e) { }
+
+        private void textBox4_TextChanged(object sender, EventArgs e) { }
+
+        private void textBox5_TextChanged(object sender, EventArgs e) { }
+
+        private void changeText(object sender, KeyEventArgs e)
+        {
+            string str = ((TextBox)sender).Name;
+            
+            if ((e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9) ||
+                (e.KeyCode >= Keys.NumPad0 && e.KeyCode <= Keys.NumPad9) ||
+                (e.KeyCode == Keys.Space || e.KeyCode == Keys.Back ||
+                e.KeyCode == Keys.Oemcomma || e.KeyCode == Keys.OemPeriod ||
+                e.KeyCode == Keys.Decimal))
+            {
+                double val;
+                bool isNumeric = double.TryParse(((TextBox)sender).Text.Replace('.',','), out val);
+
+                if (isNumeric)
+                {
+                    calculations(str, val);
+                }
+                else
+                {
+                    clearText(str);
+                }
+            }
+            else if (e.KeyCode != Keys.Tab && e.KeyCode != Keys.Alt && e.KeyCode != Keys.Control)
             {
                 clearText(str);
             }

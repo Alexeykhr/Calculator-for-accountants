@@ -234,6 +234,7 @@
             this.checkBox2.TabStop = false;
             this.checkBox2.Text = "Округлять гр. сумму";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // Form1
             // 
