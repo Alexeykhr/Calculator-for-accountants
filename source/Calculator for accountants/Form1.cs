@@ -121,20 +121,18 @@ namespace Calculator_for_accountants
                     break;
             }
 
-            label10.Text = Convert.ToString(dirty);
-
-            if ( ! field.Equals("textBox1") )
-            {
-                dirty = Math.Ceiling(dirty);
-            }
-
             ndfl = Convert.ToDouble(dirty * koefNDFL);
             vz = Convert.ToDouble(dirty * koefVZ);
             esv = Convert.ToDouble(dirty * koefESV);
-
-            if ( ! field.Equals("textBox1") )
+            
+            if (!field.Equals("textBox1"))
             {
-                textBox1.Text = Convert.ToString( Math.Ceiling(dirty) );
+                if (checkBox2.Checked)
+                {
+                    dirty = Math.Ceiling(dirty);
+                }
+
+                textBox1.Text = dirty.ToString("N4", nfi);
             }
 
             if ( ! field.Equals("textBox2") )

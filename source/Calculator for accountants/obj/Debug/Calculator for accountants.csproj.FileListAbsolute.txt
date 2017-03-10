@@ -10,3 +10,15 @@ c:\users\alexey\documents\visual studio 2015\Projects\Calculator for accountants
 c:\users\alexey\documents\visual studio 2015\Projects\Calculator for accountants\Calculator for accountants\bin\Debug\System.Net.Http.dll
 c:\users\alexey\documents\visual studio 2015\Projects\Calculator for accountants\Calculator for accountants\bin\Debug\System.Net.Http.xml
 c:\users\alexey\documents\visual studio 2015\Projects\Calculator for accountants\Calculator for accountants\bin\Debug\ru\System.Net.Http.resources.dll
+D:\My programm\Calculator-for-accountants\source\Calculator for accountants\bin\Debug\Calculator for accountants.exe.config
+D:\My programm\Calculator-for-accountants\source\Calculator for accountants\obj\Debug\Calculator for accountants.exe
+D:\My programm\Calculator-for-accountants\source\Calculator for accountants\obj\Debug\Calculator for accountants.pdb
+D:\My programm\Calculator-for-accountants\source\Calculator for accountants\bin\Debug\Calculator for accountants.exe
+D:\My programm\Calculator-for-accountants\source\Calculator for accountants\bin\Debug\Calculator for accountants.pdb
+D:\My programm\Calculator-for-accountants\source\Calculator for accountants\bin\Debug\System.Net.Http.dll
+D:\My programm\Calculator-for-accountants\source\Calculator for accountants\bin\Debug\System.Net.Http.xml
+D:\My programm\Calculator-for-accountants\source\Calculator for accountants\bin\Debug\ru\System.Net.Http.resources.dll
+D:\My programm\Calculator-for-accountants\source\Calculator for accountants\obj\Debug\Calculator for accountants.csprojResolveAssemblyReference.cache
+D:\My programm\Calculator-for-accountants\source\Calculator for accountants\obj\Debug\Calculator_for_accountants.Form1.resources
+D:\My programm\Calculator-for-accountants\source\Calculator for accountants\obj\Debug\Calculator_for_accountants.Properties.Resources.resources
+D:\My programm\Calculator-for-accountants\source\Calculator for accountants\obj\Debug\Calculator for accountants.csproj.GenerateResource.Cache

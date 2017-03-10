@@ -46,7 +46,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // checkBox1
@@ -67,7 +67,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(113, 9);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(136, 20);
+            this.textBox1.Size = new System.Drawing.Size(158, 20);
             this.textBox1.TabIndex = 2;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -95,7 +95,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(113, 35);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(136, 20);
+            this.textBox2.Size = new System.Drawing.Size(158, 20);
             this.textBox2.TabIndex = 4;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -113,7 +113,7 @@
             // 
             this.textBox3.Location = new System.Drawing.Point(113, 61);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(136, 20);
+            this.textBox3.Size = new System.Drawing.Size(158, 20);
             this.textBox3.TabIndex = 6;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
@@ -131,7 +131,7 @@
             // 
             this.textBox4.Location = new System.Drawing.Point(113, 87);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(136, 20);
+            this.textBox4.Size = new System.Drawing.Size(158, 20);
             this.textBox4.TabIndex = 8;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
@@ -149,7 +149,7 @@
             // 
             this.textBox5.Location = new System.Drawing.Point(113, 113);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(136, 20);
+            this.textBox5.Size = new System.Drawing.Size(158, 20);
             this.textBox5.TabIndex = 10;
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
@@ -157,7 +157,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(264, 36);
+            this.label6.Location = new System.Drawing.Point(290, 36);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(91, 15);
             this.label6.TabIndex = 12;
@@ -167,7 +167,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(264, 62);
+            this.label7.Location = new System.Drawing.Point(290, 62);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(94, 15);
             this.label7.TabIndex = 13;
@@ -177,7 +177,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(264, 114);
+            this.label8.Location = new System.Drawing.Point(290, 114);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(101, 15);
             this.label8.TabIndex = 15;
@@ -187,7 +187,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(264, 88);
+            this.label9.Location = new System.Drawing.Point(290, 88);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(91, 15);
             this.label9.TabIndex = 14;
@@ -197,7 +197,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(264, 140);
+            this.label11.Location = new System.Drawing.Point(290, 140);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(92, 15);
             this.label11.TabIndex = 19;
@@ -218,26 +218,29 @@
             this.textBox6.Location = new System.Drawing.Point(113, 139);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(136, 20);
+            this.textBox6.Size = new System.Drawing.Size(158, 20);
             this.textBox6.TabIndex = 17;
             this.textBox6.TabStop = false;
             // 
-            // label10
+            // checkBox2
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(264, 11);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(14, 15);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "0";
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Checked = true;
+            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox2.Location = new System.Drawing.Point(140, 167);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(131, 17);
+            this.checkBox2.TabIndex = 20;
+            this.checkBox2.TabStop = false;
+            this.checkBox2.Text = "Округлять гр. сумму";
+            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(264, 192);
-            this.Controls.Add(this.label10);
+            this.ClientSize = new System.Drawing.Size(282, 192);
+            this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.textBox6);
@@ -284,7 +287,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }
 
