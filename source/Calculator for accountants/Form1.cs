@@ -35,11 +35,11 @@ namespace Calculator_for_accountants
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
             double val;
-            bool isNumeric = double.TryParse(textBox2.Text.Replace('.', ','), out val);
+            bool isNumeric = double.TryParse(textBox1.Text.Replace('.', ','), out val);
 
             if (isNumeric)
             {
-                calculations("textBox2", val);
+                calculations("", val);
             }
         }
 
@@ -57,14 +57,15 @@ namespace Calculator_for_accountants
         {
             string str = ((TextBox)sender).Name;
             
-            if ((e.KeyCode >= Keys.D0 && e.KeyCode <= Keys.D9) ||
-                (e.KeyCode >= Keys.NumPad0 && e.KeyCode <= Keys.NumPad9) ||
-                (e.KeyCode == Keys.Space || e.KeyCode == Keys.Back ||
-                e.KeyCode == Keys.Oemcomma || e.KeyCode == Keys.OemPeriod ||
-                e.KeyCode == Keys.Decimal))
+            if (char.IsLetter((char) e.KeyCode) &&
+                (e.KeyCode <= Keys.NumPad0 && e.KeyCode >= Keys.NumPad9 &&
+                e.KeyCode != Keys.Oemcomma && e.KeyCode != Keys.OemPeriod && e.KeyCode != Keys.Decimal)
+            ) {
+                clearText(str);
+            }
+            else
             {
-                double val;
-                bool isNumeric = double.TryParse(((TextBox)sender).Text.Replace('.',','), out val);
+                bool isNumeric = double.TryParse(((TextBox)sender).Text.Replace('.', ','), out double val);
 
                 if (isNumeric)
                 {
@@ -75,15 +76,11 @@ namespace Calculator_for_accountants
                     clearText(str);
                 }
             }
-            else if (e.KeyCode != Keys.Tab && e.KeyCode != Keys.Alt && e.KeyCode != Keys.Control)
-            {
-                clearText(str);
-            }
         }
 
         private void calculations(string field, double value)
         {
-            double dirty, ndfl, vz, esv;
+            double dirty, ndfl, vz, esv, clear, sumDirtyEsv;
 
             switch (field)
             {
@@ -104,41 +101,55 @@ namespace Calculator_for_accountants
                     break;
             }
 
-            ndfl = Convert.ToDouble(dirty * koefNDFL);
-            vz = Convert.ToDouble(dirty * koefVZ);
-            esv = Convert.ToDouble(dirty * koefESV);
-            
-            if (!field.Equals("textBox1"))
+            if (checkBox2.Checked)
             {
-                if (checkBox2.Checked)
-                {
-                    dirty = Math.Ceiling(dirty);
-                }
-
-                textBox1.Text = dirty.ToString("N4", nfi);
+                dirty = roundNum(dirty);
+                ndfl = roundNum(dirty * koefNDFL);
+                vz = roundNum(dirty * koefVZ);
+                esv = roundNum(dirty * koefESV);
+                clear = roundNum(dirty - (dirty * koefNDFL) - (dirty * koefVZ));
+                sumDirtyEsv = roundNum(dirty + (dirty * koefESV));
+            }
+            else
+            {
+                ndfl = dirty * koefNDFL;
+                vz = dirty * koefVZ;
+                esv = dirty * koefESV;
+                clear = dirty - ndfl - vz;
+                sumDirtyEsv = dirty + esv;
+            }
+            
+            if ( ! field.Equals("textBox1") )
+            {
+                textBox1.Text = string.Format("{0:#,##0.##}", dirty);
             }
 
             if ( ! field.Equals("textBox2") )
             {
-                textBox2.Text = ndfl.ToString("N4", nfi);
+                textBox2.Text = string.Format("{0:#,##0.##}", ndfl);
             }
 
             if ( ! field.Equals("textBox3") )
             {
-                textBox3.Text = vz.ToString("N4", nfi);
+                textBox3.Text = string.Format("{0:#,##0.##}", vz);
             }
 
             if ( ! field.Equals("textBox4") )
             {
-                textBox4.Text = esv.ToString("N4", nfi);
+                textBox4.Text = string.Format("{0:#,##0.##}", esv);
             }
 
             if ( ! field.Equals("textBox5") )
             {
-                textBox5.Text = (dirty - ndfl - vz).ToString("N4", nfi);
+                textBox5.Text = string.Format("{0:#,##0.##}", clear);
             }
             
-            textBox6.Text = (dirty + esv).ToString("N4", nfi);
+            textBox6.Text = string.Format("{0:#,##0.##}", sumDirtyEsv);
+        }
+
+        private double roundNum(double num)
+        {
+            return Math.Ceiling(num * 100) / 100;
         }
 
         private void clearText(string field)

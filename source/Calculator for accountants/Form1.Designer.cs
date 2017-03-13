@@ -67,7 +67,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(113, 9);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(158, 20);
+            this.textBox1.Size = new System.Drawing.Size(161, 20);
             this.textBox1.TabIndex = 2;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -95,7 +95,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(113, 35);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(158, 20);
+            this.textBox2.Size = new System.Drawing.Size(161, 20);
             this.textBox2.TabIndex = 4;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -113,7 +113,7 @@
             // 
             this.textBox3.Location = new System.Drawing.Point(113, 61);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(158, 20);
+            this.textBox3.Size = new System.Drawing.Size(161, 20);
             this.textBox3.TabIndex = 6;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
@@ -131,7 +131,7 @@
             // 
             this.textBox4.Location = new System.Drawing.Point(113, 87);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(158, 20);
+            this.textBox4.Size = new System.Drawing.Size(161, 20);
             this.textBox4.TabIndex = 8;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
@@ -149,7 +149,7 @@
             // 
             this.textBox5.Location = new System.Drawing.Point(113, 113);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(158, 20);
+            this.textBox5.Size = new System.Drawing.Size(161, 20);
             this.textBox5.TabIndex = 10;
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
@@ -218,7 +218,7 @@
             this.textBox6.Location = new System.Drawing.Point(113, 139);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(158, 20);
+            this.textBox6.Size = new System.Drawing.Size(161, 20);
             this.textBox6.TabIndex = 17;
             this.textBox6.TabStop = false;
             // 
@@ -229,10 +229,10 @@
             this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox2.Location = new System.Drawing.Point(140, 167);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(131, 17);
+            this.checkBox2.Size = new System.Drawing.Size(146, 17);
             this.checkBox2.TabIndex = 20;
             this.checkBox2.TabStop = false;
-            this.checkBox2.Text = "Округлять гр. сумму";
+            this.checkBox2.Text = "Округлять до большего";
             this.checkBox2.UseVisualStyleBackColor = true;
             this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
@@ -240,7 +240,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(282, 192);
+            this.ClientSize = new System.Drawing.Size(286, 192);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label12);
