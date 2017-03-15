@@ -17,6 +17,13 @@ namespace Calculator_for_accountants
         const double koefVZ = 0.015;
         const double koefESV = 0.22;
 
+        private double dirty;
+        private double ndfl;
+        private double vz;
+        private double esv;
+        private double clear;
+        private double sumDirtyEsv;
+
         private void Form1_Load(object sender, EventArgs e)
         {
             TopMost = true;
@@ -32,17 +39,6 @@ namespace Calculator_for_accountants
             TopMost = (checkBox1.Checked) ? true : false;
         }
 
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-            double val;
-            bool isNumeric = double.TryParse(textBox1.Text.Replace('.', ','), out val);
-
-            if (isNumeric)
-            {
-                calculations("", val);
-            }
-        }
-
         private void textBox1_TextChanged(object sender, EventArgs e) { }
 
         private void textBox2_TextChanged(object sender, EventArgs e) { }
@@ -53,105 +49,6 @@ namespace Calculator_for_accountants
 
         private void textBox5_TextChanged(object sender, EventArgs e) { }
 
-        private void changeText(object sender, KeyEventArgs e)
-        {
-            string str = ((TextBox)sender).Name;
-            
-            if (char.IsLetter((char) e.KeyCode) &&
-                (e.KeyCode <= Keys.NumPad0 && e.KeyCode >= Keys.NumPad9 &&
-                e.KeyCode != Keys.Oemcomma && e.KeyCode != Keys.OemPeriod && e.KeyCode != Keys.Decimal)
-            ) {
-                clearText(str);
-            }
-            else
-            {
-                bool isNumeric = double.TryParse(((TextBox)sender).Text.Replace('.', ','), out double val);
-
-                if (isNumeric)
-                {
-                    calculations(str, val);
-                }
-                else
-                {
-                    clearText(str);
-                }
-            }
-        }
-
-        private void calculations(string field, double value)
-        {
-            double dirty, ndfl, vz, esv, clear, sumDirtyEsv;
-
-            switch (field)
-            {
-                case "textBox2":
-                    dirty = value / koefNDFL;
-                    break;
-                case "textBox3":
-                    dirty = value / koefVZ;
-                    break;
-                case "textBox4":
-                    dirty = value / koefESV;
-                    break;
-                case "textBox5":
-                    dirty = value / (1 - (koefNDFL + koefVZ));
-                    break;
-                default:
-                    dirty = value;
-                    break;
-            }
-
-            if (checkBox2.Checked)
-            {
-                dirty = roundNum(dirty);
-                ndfl = roundNum(dirty * koefNDFL);
-                vz = roundNum(dirty * koefVZ);
-                esv = roundNum(dirty * koefESV);
-                clear = roundNum(dirty - (dirty * koefNDFL) - (dirty * koefVZ));
-                sumDirtyEsv = roundNum(dirty + (dirty * koefESV));
-            }
-            else
-            {
-                ndfl = dirty * koefNDFL;
-                vz = dirty * koefVZ;
-                esv = dirty * koefESV;
-                clear = dirty - ndfl - vz;
-                sumDirtyEsv = dirty + esv;
-            }
-            
-            if ( ! field.Equals("textBox1") )
-            {
-                textBox1.Text = string.Format("{0:#,##0.##}", dirty);
-            }
-
-            if ( ! field.Equals("textBox2") )
-            {
-                textBox2.Text = string.Format("{0:#,##0.##}", ndfl);
-            }
-
-            if ( ! field.Equals("textBox3") )
-            {
-                textBox3.Text = string.Format("{0:#,##0.##}", vz);
-            }
-
-            if ( ! field.Equals("textBox4") )
-            {
-                textBox4.Text = string.Format("{0:#,##0.##}", esv);
-            }
-
-            if ( ! field.Equals("textBox5") )
-            {
-                textBox5.Text = string.Format("{0:#,##0.##}", clear);
-            }
-            
-            textBox6.Text = string.Format("{0:#,##0.##}", sumDirtyEsv);
-        }
-
-        private double roundNum(double num)
-        {
-            return Math.Ceiling(num * 100) / 100;
-        }
-
         private void clearText(string field)
         {
             foreach (Control c in Controls)
@@ -161,6 +58,63 @@ namespace Calculator_for_accountants
                     ((TextBox)c).Text = "0";
                 }
             }
+        }
+
+        private void changeText(object sender, KeyEventArgs e)
+        {
+            if (char.IsDigit((char) e.KeyCode) || e.KeyCode >= Keys.NumPad0 || e.KeyCode <= Keys.NumPad9
+                || e.KeyCode == Keys.Oemcomma || e.KeyCode == Keys.OemPeriod || e.KeyCode == Keys.Decimal
+            ) {
+                bool isNumeric = double.TryParse(((TextBox) sender).Text.Replace('.', ','), out double val);
+
+                if (isNumeric)
+                {
+                    calculations(sender, val);
+                }
+                else
+                {
+                    clearText(((TextBox) sender).Name);
+                }
+            }
+            else
+            {
+                clearText(((TextBox) sender).Name);
+            }
+        }
+
+        private void calculations(object sender, double value)
+        {
+            switch (((TextBox) sender).Name)
+            {
+                case "textBox2":
+                    this.dirty = value / koefNDFL;
+                    break;
+                case "textBox3":
+                    this.dirty = value / koefVZ;
+                    break;
+                case "textBox4":
+                    this.dirty = value / koefESV;
+                    break;
+                case "textBox5":
+                    this.dirty = value / (1 - (koefNDFL + koefVZ));
+                    break;
+                default:
+                    this.dirty = value;
+                    break;
+            }
+            
+            this.ndfl = dirty * koefNDFL;
+            this.vz = dirty * koefVZ;
+            this.esv = dirty * koefESV;
+            this.clear = dirty - (dirty * koefNDFL) - (dirty * koefVZ);
+            this.sumDirtyEsv = dirty + (dirty * koefESV);
+
+            textBox1.Text = string.Format("{0:#,##0.##}", this.dirty);
+            textBox2.Text = string.Format("{0:#,##0.##}", this.ndfl);
+            textBox3.Text = string.Format("{0:#,##0.##}", this.vz);
+            textBox4.Text = string.Format("{0:#,##0.##}", this.esv);
+            textBox5.Text = string.Format("{0:#,##0.##}", this.clear);
+            textBox6.Text = string.Format("{0:#,##0.##}", this.sumDirtyEsv);
         }
     }
 }
