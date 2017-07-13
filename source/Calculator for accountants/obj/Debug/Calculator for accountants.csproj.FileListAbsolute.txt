@@ -22,3 +22,13 @@ D:\My programm\Calculator-for-accountants\source\Calculator for accountants\obj\
 D:\My programm\Calculator-for-accountants\source\Calculator for accountants\obj\Debug\Calculator_for_accountants.Form1.resources
 D:\My programm\Calculator-for-accountants\source\Calculator for accountants\obj\Debug\Calculator_for_accountants.Properties.Resources.resources
 D:\My programm\Calculator-for-accountants\source\Calculator for accountants\obj\Debug\Calculator for accountants.csproj.GenerateResource.Cache
+D:\dev\Calculator-for-accountants\source\Calculator for accountants\bin\Debug\Calculator for accountants.exe.config
+D:\dev\Calculator-for-accountants\source\Calculator for accountants\bin\Debug\Calculator for accountants.exe
+D:\dev\Calculator-for-accountants\source\Calculator for accountants\bin\Debug\Calculator for accountants.pdb
+D:\dev\Calculator-for-accountants\source\Calculator for accountants\obj\Debug\Calculator for accountants.csprojResolveAssemblyReference.cache
+D:\dev\Calculator-for-accountants\source\Calculator for accountants\obj\Debug\Calculator_for_accountants.Properties.Resources.resources
+D:\dev\Calculator-for-accountants\source\Calculator for accountants\obj\Debug\Calculator for accountants.csproj.GenerateResource.Cache
+D:\dev\Calculator-for-accountants\source\Calculator for accountants\obj\Debug\Calculator for accountants.exe
+D:\dev\Calculator-for-accountants\source\Calculator for accountants\obj\Debug\Calculator for accountants.pdb
+D:\dev\Calculator-for-accountants\source\Calculator for accountants\obj\Debug\Calculator_for_accountants.forms.FormHelpler.resources
+D:\dev\Calculator-for-accountants\source\Calculator for accountants\obj\Debug\Calculator_for_accountants.forms.FormMain.resources
