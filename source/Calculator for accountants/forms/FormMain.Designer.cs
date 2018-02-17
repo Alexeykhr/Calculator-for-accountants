@@ -43,6 +43,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tClear = new System.Windows.Forms.TextBox();
+            this.fRate = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // checkBox1
@@ -50,7 +51,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(39, 171);
+            this.checkBox1.Location = new System.Drawing.Point(30, 187);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(45, 17);
             this.checkBox1.TabIndex = 0;
@@ -65,7 +66,7 @@
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label10.Location = new System.Drawing.Point(11, 172);
+            this.label10.Location = new System.Drawing.Point(9, 187);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(15, 15);
             this.label10.TabIndex = 22;
@@ -77,7 +78,7 @@
             this.checkBox2.AutoSize = true;
             this.checkBox2.Checked = true;
             this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox2.Location = new System.Drawing.Point(84, 171);
+            this.checkBox2.Location = new System.Drawing.Point(74, 187);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(131, 17);
             this.checkBox2.TabIndex = 21;
@@ -88,9 +89,10 @@
             // 
             // tDirty
             // 
+            this.tDirty.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tDirty.Location = new System.Drawing.Point(74, 12);
             this.tDirty.Name = "tDirty";
-            this.tDirty.Size = new System.Drawing.Size(131, 20);
+            this.tDirty.Size = new System.Drawing.Size(153, 23);
             this.tDirty.TabIndex = 23;
             this.tDirty.Leave += new System.EventHandler(this.TDirty_Leave);
             // 
@@ -98,7 +100,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(7, 143);
+            this.label12.Location = new System.Drawing.Point(6, 158);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(61, 15);
             this.label12.TabIndex = 34;
@@ -116,18 +118,20 @@
             // 
             // tDirtyEsv
             // 
-            this.tDirtyEsv.Location = new System.Drawing.Point(74, 142);
+            this.tDirtyEsv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tDirtyEsv.Location = new System.Drawing.Point(73, 157);
             this.tDirtyEsv.Name = "tDirtyEsv";
             this.tDirtyEsv.ReadOnly = true;
-            this.tDirtyEsv.Size = new System.Drawing.Size(131, 20);
+            this.tDirtyEsv.Size = new System.Drawing.Size(153, 23);
             this.tDirtyEsv.TabIndex = 33;
             this.tDirtyEsv.TabStop = false;
             // 
             // tNdfl
             // 
-            this.tNdfl.Location = new System.Drawing.Point(74, 38);
+            this.tNdfl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tNdfl.Location = new System.Drawing.Point(74, 41);
             this.tNdfl.Name = "tNdfl";
-            this.tNdfl.Size = new System.Drawing.Size(131, 20);
+            this.tNdfl.Size = new System.Drawing.Size(153, 23);
             this.tNdfl.TabIndex = 25;
             this.tNdfl.Leave += new System.EventHandler(this.TNdfl_Leave);
             // 
@@ -135,7 +139,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(24, 39);
+            this.label2.Location = new System.Drawing.Point(24, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 15);
             this.label2.TabIndex = 26;
@@ -143,9 +147,10 @@
             // 
             // tVz
             // 
-            this.tVz.Location = new System.Drawing.Point(74, 64);
+            this.tVz.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tVz.Location = new System.Drawing.Point(73, 70);
             this.tVz.Name = "tVz";
-            this.tVz.Size = new System.Drawing.Size(131, 20);
+            this.tVz.Size = new System.Drawing.Size(153, 23);
             this.tVz.TabIndex = 27;
             this.tVz.Leave += new System.EventHandler(this.TVz_Leave);
             // 
@@ -153,7 +158,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(45, 65);
+            this.label3.Location = new System.Drawing.Point(44, 71);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(23, 15);
             this.label3.TabIndex = 28;
@@ -161,9 +166,10 @@
             // 
             // tEsv
             // 
-            this.tEsv.Location = new System.Drawing.Point(74, 90);
+            this.tEsv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tEsv.Location = new System.Drawing.Point(73, 99);
             this.tEsv.Name = "tEsv";
-            this.tEsv.Size = new System.Drawing.Size(131, 20);
+            this.tEsv.Size = new System.Drawing.Size(153, 23);
             this.tEsv.TabIndex = 29;
             this.tEsv.Leave += new System.EventHandler(this.TEsv_Leave);
             // 
@@ -171,7 +177,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(19, 117);
+            this.label5.Location = new System.Drawing.Point(18, 129);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 15);
             this.label5.TabIndex = 32;
@@ -181,7 +187,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(37, 91);
+            this.label4.Location = new System.Drawing.Point(36, 100);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 15);
             this.label4.TabIndex = 30;
@@ -189,18 +195,28 @@
             // 
             // tClear
             // 
-            this.tClear.Location = new System.Drawing.Point(74, 116);
+            this.tClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tClear.Location = new System.Drawing.Point(73, 128);
             this.tClear.Name = "tClear";
-            this.tClear.Size = new System.Drawing.Size(131, 20);
+            this.tClear.Size = new System.Drawing.Size(153, 23);
             this.tClear.TabIndex = 31;
             this.tClear.Leave += new System.EventHandler(this.TClear_Leave);
+            // 
+            // fRate
+            // 
+            this.fRate.Location = new System.Drawing.Point(206, 186);
+            this.fRate.Name = "fRate";
+            this.fRate.Size = new System.Drawing.Size(20, 20);
+            this.fRate.TabIndex = 35;
+            this.fRate.TextChanged += new System.EventHandler(this.FRate_TextChanged);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(216, 196);
+            this.ClientSize = new System.Drawing.Size(239, 211);
+            this.Controls.Add(this.fRate);
             this.Controls.Add(this.tDirty);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label1);
@@ -218,10 +234,9 @@
             this.Controls.Add(this.checkBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Калькулятор для бухгалтеров";
+            this.Text = "Калькулятор";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -246,6 +261,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tClear;
+        private System.Windows.Forms.TextBox fRate;
     }
 }
 

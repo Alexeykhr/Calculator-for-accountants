@@ -8,13 +8,22 @@ namespace Calculator_for_accountants.forms
 {
     public partial class FormMain : Form
     {
-        Economic eco = new Economic();
+        private const string basicFormat = "{0:#,##0.##}";
+
+        private static int rate;
+
+        private Economic eco = new Economic();
 
         public FormMain()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Hanging events.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
             tDirty.KeyPress += EventKeyPress;
@@ -30,6 +39,11 @@ namespace Calculator_for_accountants.forms
             tClear.KeyUp += EventKeyUp;
         }
 
+        /// <summary>
+        /// We calculate the numbers based on the input field.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EventKeyUp(object sender, KeyEventArgs e)
         {
             if (char.IsDigit((char) e.KeyCode) ||
@@ -37,8 +51,8 @@ namespace Calculator_for_accountants.forms
                 e.KeyCode == Keys.Back || e.KeyCode == Keys.Delete)
             {
                 var t = sender as TextBox;
-
-                if (!double.TryParse(t.Text, out double res))
+                
+                if (!decimal.TryParse(t.Text, out decimal res))
                     return;
 
                 switch (t.Name)
@@ -52,10 +66,15 @@ namespace Calculator_for_accountants.forms
                 }
 
                 eco.Calculate();
-                Fill(t.Name);
+                FillTextBoxex(t.Name);
             }
         }
 
+        /// <summary>
+        /// Change "." on ",".
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EventKeyPress(object sender, KeyPressEventArgs e)
         {
             var t = (sender as TextBox);
@@ -69,32 +88,46 @@ namespace Calculator_for_accountants.forms
             }
         }
 
-        private void Fill(string name = "")
+        /// <summary>
+        /// Fill in the fields.
+        /// </summary>
+        /// <param name="name"></param>
+        private void FillTextBoxex(string name = "")
         {
             if (!name.Equals(tDirty.Name))
-                SetFormat(tDirty, eco.Dirty);
+                WriteTextToTextBox(tDirty, eco.Dirty);
 
             if (!name.Equals(tNdfl.Name))
-                SetFormat(tNdfl, eco.Ndfl);
+                WriteTextToTextBox(tNdfl, eco.Ndfl);
 
             if (!name.Equals(tVz.Name))
-                SetFormat(tVz, eco.Vz);
+                WriteTextToTextBox(tVz, eco.Vz);
 
             if (!name.Equals(tEsv.Name))
-                SetFormat(tEsv, eco.Esv);
+                WriteTextToTextBox(tEsv, eco.Esv);
 
             if (!name.Equals(tClear.Name))
-                SetFormat(tClear, eco.Clear);
+                WriteTextToTextBox(tClear, eco.Clear);
 
             if (!name.Equals(tDirtyEsv.Name))
-                SetFormat(tDirtyEsv, eco.DirtyEsv);
+                WriteTextToTextBox(tDirtyEsv, eco.DirtyEsv);
         }
 
+        /// <summary>
+        /// Window on top of other windows.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
             TopMost = checkBox1.Checked;
         }
 
+        /// <summary>
+        /// Open the help window.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Label10_Click(object sender, EventArgs e)
         {
             FormHelpler f = new FormHelpler();
@@ -103,42 +136,100 @@ namespace Calculator_for_accountants.forms
             f.Show(this);
         }
 
+        /// <summary>
+        /// Change event rounding off a dirty salary.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CheckBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            eco.SetRound(checkBox2.Checked);
+            eco.Calculate();
+            FillTextBoxex();
+        }
+
+        /// <summary>
+        /// Display new value in TextBox.
+        /// </summary>
+        /// <param name="t"></param>
+        /// <param name="val"></param>
+        private static void WriteTextToTextBox(TextBox t, decimal val)
+        {
+            var format = rate > 0 ? MakeFormat(GetLengthIntegerPart(val), rate) : basicFormat;
+
+            t.Text = string.Format(format, val);
+        }
+
+        /// <summary>
+        /// Change digits.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FRate_TextChanged(object sender, EventArgs e)
+        {
+            if (int.TryParse(fRate.Text, out int val) && val > 0 && val < 11)
+                rate = val;
+            else
+                rate = 0;
+
+            FillTextBoxex();
+        }
+
+        /// <summary>
+        /// Get a valid format for string.Format.
+        /// </summary>
+        /// <param name="len"></param>
+        /// <param name="rate"></param>
+        /// <returns></returns>
+        private static string MakeFormat(int len, int rate)
+        {
+            string str = string.Empty;
+
+            for (int i = 0; i < len; i += rate)
+                str += new String('#', i > len ? rate - i - len : rate) + " ";
+
+            return "{0:" + str.TrimEnd() + ".##}";
+        }
+
+        /// <summary>
+        /// Get the length of the integer part.
+        /// </summary>
+        /// <returns></returns>
+        private static int GetLengthIntegerPart(decimal num)
+        {
+            return Math.Truncate(num).ToString().Length;
+        }
+
+        /**
+         * |-------------------------------------------------------------
+         * | Events of focus removal.
+         * |-------------------------------------------------------------
+         * |
+         */
+
         private void TDirty_Leave(object sender, EventArgs e)
         {
-            SetFormat(tDirty, eco.Dirty);
+            WriteTextToTextBox(tDirty, eco.Dirty);
         }
 
         private void TNdfl_Leave(object sender, EventArgs e)
         {
-            SetFormat(tNdfl, eco.Ndfl);
+            WriteTextToTextBox(tNdfl, eco.Ndfl);
         }
 
         private void TVz_Leave(object sender, EventArgs e)
         {
-            SetFormat(tVz, eco.Vz);
+            WriteTextToTextBox(tVz, eco.Vz);
         }
 
         private void TEsv_Leave(object sender, EventArgs e)
         {
-            SetFormat(tEsv, eco.Esv);
+            WriteTextToTextBox(tEsv, eco.Esv);
         }
 
         private void TClear_Leave(object sender, EventArgs e)
         {
-            SetFormat(tClear, eco.Clear);
-        }
-
-        private static void SetFormat(TextBox t, double val)
-        {
-            t.Text = string.Format("{0:#,##0.##}", val);
-        }
-
-        private void CheckBox2_CheckedChanged(object sender, EventArgs e)
-        {
-            eco.SetRound(checkBox2.Checked);
-            
-            eco.Calculate();
-            Fill();
+            WriteTextToTextBox(tClear, eco.Clear);
         }
     }
 }

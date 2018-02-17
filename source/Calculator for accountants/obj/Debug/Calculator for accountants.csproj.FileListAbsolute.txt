@@ -32,3 +32,14 @@ D:\dev\Calculator-for-accountants\source\Calculator for accountants\obj\Debug\Ca
 D:\dev\Calculator-for-accountants\source\Calculator for accountants\obj\Debug\Calculator for accountants.pdb
 D:\dev\Calculator-for-accountants\source\Calculator for accountants\obj\Debug\Calculator_for_accountants.forms.FormHelpler.resources
 D:\dev\Calculator-for-accountants\source\Calculator for accountants\obj\Debug\Calculator_for_accountants.forms.FormMain.resources
+D:\dev\apps\Calculator-for-accountants\source\Calculator for accountants\bin\Debug\Calculator for accountants.exe.config
+D:\dev\apps\Calculator-for-accountants\source\Calculator for accountants\bin\Debug\Calculator for accountants.exe
+D:\dev\apps\Calculator-for-accountants\source\Calculator for accountants\bin\Debug\Calculator for accountants.pdb
+D:\dev\apps\Calculator-for-accountants\source\Calculator for accountants\obj\Debug\Calculator for accountants.csprojResolveAssemblyReference.cache
+D:\dev\apps\Calculator-for-accountants\source\Calculator for accountants\obj\Debug\Calculator_for_accountants.forms.FormHelpler.resources
+D:\dev\apps\Calculator-for-accountants\source\Calculator for accountants\obj\Debug\Calculator_for_accountants.forms.FormMain.resources
+D:\dev\apps\Calculator-for-accountants\source\Calculator for accountants\obj\Debug\Calculator_for_accountants.Properties.Resources.resources
+D:\dev\apps\Calculator-for-accountants\source\Calculator for accountants\obj\Debug\Calculator for accountants.csproj.GenerateResource.Cache
+D:\dev\apps\Calculator-for-accountants\source\Calculator for accountants\obj\Debug\Calculator for accountants.csproj.CoreCompileInputs.cache
+D:\dev\apps\Calculator-for-accountants\source\Calculator for accountants\obj\Debug\Calculator for accountants.exe
+D:\dev\apps\Calculator-for-accountants\source\Calculator for accountants\obj\Debug\Calculator for accountants.pdb

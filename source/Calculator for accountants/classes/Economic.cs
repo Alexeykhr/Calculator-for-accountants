@@ -4,16 +4,16 @@ namespace Calculator_for_accountants.classes
 {
     class Economic
     {
-        public const double koefNDFL = 0.18;
-        public const double koefVZ = 0.015;
-        public const double koefESV = 0.22;
+        public const decimal koefNDFL = 0.18M;
+        public const decimal koefVZ = 0.015M;
+        public const decimal koefESV = 0.22M;
 
-        private double dirty;
-        private double ndfl;
-        private double vz;
-        private double esv;
-        private double clear;
-        private double dirtyEsv;
+        private decimal dirty;
+        private decimal ndfl;
+        private decimal vz;
+        private decimal esv;
+        private decimal clear;
+        private decimal dirtyEsv;
 
         private bool isRound = true;
 
@@ -23,13 +23,13 @@ namespace Calculator_for_accountants.classes
             dirty = Math.Ceiling(dirty);
         }
 
-        public double Dirty
+        public decimal Dirty
         {
             get { return dirty; }
             set { dirty = value; }
         }
 
-        public double Ndfl
+        public decimal Ndfl
         {
             get { return ndfl; }
             set
@@ -42,7 +42,7 @@ namespace Calculator_for_accountants.classes
             }
         }
 
-        public double Vz
+        public decimal Vz
         {
             get { return vz; }
             set
@@ -55,7 +55,7 @@ namespace Calculator_for_accountants.classes
             }
         }
 
-        public double Esv
+        public decimal Esv
         {
             get { return esv; }
             set
@@ -68,7 +68,7 @@ namespace Calculator_for_accountants.classes
             }
         }
 
-        public double Clear
+        public decimal Clear
         {
             get { return clear; }
             set
@@ -81,7 +81,7 @@ namespace Calculator_for_accountants.classes
             }
         }
 
-        public double DirtyEsv
+        public decimal DirtyEsv
         {
             get { return dirtyEsv; }
             set { dirtyEsv = value; }
